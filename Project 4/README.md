@@ -12,10 +12,9 @@ The workshop was attended by representatives from:
 
 ## **Scope**
 The workshop covered **four key attack scenarios**:  
-1. **Phishing Attack**  
-2. **Ransomware Attack**  
-3. **Insider Attack**  
-4. **SQL Injection Attack**  
+1. **Ransomware Attack**  
+2. **Insider Attack**  
+3. **SQL Injection Attack**  
 
 ## **Methodology**
 The threat modelling workshop utilized:  
@@ -37,7 +36,6 @@ mindmap
       DevEx Engineers
       DevSecOps Team
     Scope
-      Phishing Attack
       Ransomware Attack
       Insider Attack
       SQL Injection Attack
