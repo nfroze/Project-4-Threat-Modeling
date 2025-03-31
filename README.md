@@ -1,4 +1,4 @@
-# 🧠 Project 4: Threat Modeling & Incident Response (🚧 In Progress)
+# 🧠 Project 4: Threat Modeling & Incident Response
 
 ## 1. Overview 🚀
 This project simulates a full-spectrum **threat modeling workshop** for a fictional cloud-based application. It demonstrates how to proactively identify, assess, and mitigate cybersecurity risks across a system's architecture using industry-standard methodologies and frameworks.
