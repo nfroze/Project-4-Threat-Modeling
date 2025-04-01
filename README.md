@@ -1,7 +1,7 @@
 # 🧠 Project 4: Threat Modeling & Incident Response
 
 ## 1. Overview 🚀
-This project simulates a full-spectrum **threat modeling workshop** for a fictional cloud-based application. It demonstrates how to proactively identify, assess, and mitigate cybersecurity risks across a system's architecture using industry-standard methodologies and frameworks.
+This project simulates a full-spectrum **threat modeling workshop** for a fictional cloud-based application called CareConnect360. It demonstrates how to proactively identify, assess, and mitigate cybersecurity risks across a system's architecture using industry-standard methodologies and frameworks.
 
 The goal is to combine architectural thinking, attacker simulation, and security response planning into a cohesive strategic process — illustrating how threat modeling supports secure design and decision-making in the DevSecOps lifecycle.
 
