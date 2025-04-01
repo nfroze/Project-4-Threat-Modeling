@@ -61,3 +61,7 @@ The goal is to combine architectural thinking, attacker simulation, and security
 
 ## 6. Conclusion ✅
 This project highlights the strategic value of **threat modeling** as part of the DevSecOps lifecycle. By leveraging STRIDE, MITRE ATT&CK, and the Cyber Kill Chain, it demonstrates how teams can proactively secure systems through architecture-aware analysis and simulated incident response.
+
+---
+
+🔗 [Back to my GitHub Profile](https://github.com/nfroze)
