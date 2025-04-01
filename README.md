@@ -47,17 +47,17 @@ This project combines architectural thinking, attacker simulation, and security 
 
 ---
 
-## 4. Supporting Materials 📎
+## 4. Supporting Materials 🗂️
 
 All deliverables are available in this repository:
 
-- [📄 CareConnect360 – System Overview (PDF)](/docs/CareConnect360.pdf)
+- [📄 CareConnect360 – Solution Description (PDF)](/docs/CareConnect360.pdf)
 - HLD & DFD Diagrams  
 - STRIDE Threat Model Tables  
 - MITRE ATT&CK Mappings  
-- Cyber Kill Chain Breakdown  
+- Cyber Kill Chain Breakdowns  
 - Risk Summaries  
-- Incident Response Playbook
+- Per-scenario threat actor profiles and attack simulations
 
 ---
 
