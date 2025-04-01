@@ -51,7 +51,7 @@ This project combines architectural thinking, attacker simulation, and security 
 
 All deliverables are available in this repository:
 
-- [📄 CareConnect360 – System Overview (PDF)](./docs/CareConnect360%20-%20Solution%20Description.pdf)
+- [📄 CareConnect360 – System Overview (PDF)](/docs/CareConnect360.pdf)
 - HLD & DFD Diagrams  
 - STRIDE Threat Model Tables  
 - MITRE ATT&CK Mappings  
