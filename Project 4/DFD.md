@@ -7,9 +7,12 @@ flowchart TD;
 
     %% Data Flow
     Frontend -->|User Inputs, Requests| Backend
-    Backend -->|Authenticate Users| Auth["🔐 Authentication"]
-    Backend -->|Query, Store Data| Database["🗄️ Patient Database"]
 
-    %% Security Controls
-    Auth -.->|Encrypt Data in Transit| Security["🛡️ Security Layer"]
-    Backend -.->|Audit Logs| Security
+    %% Trust Boundary (Internal Systems)
+    subgraph TrustBoundary ["🔐 Trust Boundary"]
+        Backend -->|Authenticate Users| Auth["🔐 Authentication"]
+        Backend -->|Query, Store Data| Database["🗄️ Patient Database"]
+        Auth -.->|Encrypt Data in Transit| Security["🛡️ Security Layer"]
+        Backend -.->|Audit Logs| Security
+    end
+```
