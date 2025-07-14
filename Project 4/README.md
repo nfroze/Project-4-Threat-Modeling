@@ -11,7 +11,7 @@ The workshop was attended by representatives from:
 - **DevSecOps Team**  
 
 ## **Scope**
-The workshop covered **four key attack scenarios**:  
+The workshop covered **three key attack scenarios**:  
 1. **Ransomware Attack**  
 2. **Insider Attack**  
 3. **SQL Injection Attack**  
