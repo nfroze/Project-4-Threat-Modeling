@@ -1,4 +1,4 @@
-# 🧠 Project 4: Threat Modeling
+# ⚠️ Project 4: Threat Modeling
 
 This project simulates a full-spectrum **threat modeling workshop** for a fictional cloud-based healthcare platform called **CareConnect360**. Built on modern AWS infrastructure and handling sensitive healthcare data (PII/PHI), the system represents a realistic enterprise attack surface — with authentication flows, real-time video, patient portals, and data exchange across services.
 
