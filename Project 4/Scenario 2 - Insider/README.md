@@ -1,99 +1,77 @@
-# 🎯 Scenario 2: Insider Threat – S3 Data Exfiltration
+# Scenario 2: Insider Threat - S3 Data Exfiltration
 
-This scenario simulates a malicious insider attack targeting CareConnect360’s sensitive patient records. An employee with legitimate access to AWS resources exfiltrates large volumes of data from S3 buckets.
+## Threat Actor Profile
 
-The goal is to highlight risks posed by internal actors with elevated permissions and demonstrate how access misuse can bypass perimeter defenses.
-
----
-
-## 1. 👤 Threat Actor Profile
-
-| Type           | Description                              | Motivation        | Access Level           |
-|----------------|------------------------------------------|-------------------|-------------------------|
+| Type | Description | Motivation | Access Level |
+|------|-------------|------------|--------------|
 | Malicious Insider | Authenticated employee misusing valid credentials | Financial gain or revenge | Internal (IAM credentials) |
 
----
+## Attack Flow
 
-## 2. 🔁 Attack Flow Summary
+1. Insider logs into AWS with valid IAM credentials
+2. Navigates to S3 buckets containing PII/PHI data
+3. Downloads large amounts of patient records
+4. Transfers data to external personal storage
+5. Leaves organisation or sells/exposes data
 
-1. Insider logs into AWS environment with valid IAM user credentials  
-2. Navigates to S3 buckets containing PII/PHI data  
-3. Downloads large amounts of sensitive patient records  
-4. Transfers data to external personal storage  
-5. Leaves organization or sells/exposes data
+[Full flow: Attacker Flow.md](./Attacker%20Flow.md)
 
-*For full flow, see [Attacker Flow.md](./Attacker%20Flow.md)*
+## MITRE ATT&CK Mapping
 
----
+| Tactic | Technique | ID |
+|--------|-----------|-----|
+| Initial Access | Valid Accounts (Insider) | T1078 |
+| Collection | Data from Cloud Storage Object | T1530 |
+| Exfiltration | Exfiltration Over Alternative Protocol | T1048.003 |
+| Defense Evasion | Disabling CloudTrail (attempted) | T1562.008 |
 
-## 3. 🧠 MITRE ATT&CK Mapping
+[Full mapping: MITRE ATT&CK Framework.md](./MITRE%20ATT%26CK%20Framework.md)
 
-| Tactic            | Technique                              | ID        |
-|-------------------|-----------------------------------------|-----------|
-| Initial Access     | Valid Accounts (Insider)                | T1078     |
-| Collection         | Data from Cloud Storage Object         | T1530     |
-| Exfiltration       | Exfiltration Over Alternative Protocol | T1048.003 |
-| Defense Evasion    | Disabling CloudTrail (attempted)        | T1562.008 |
+## Cyber Kill Chain
 
-*See full mapping: [MITRE ATT&CK Framework.md](./MITRE%20ATT%26CK%20Framework.md)*
+| Phase | Description |
+|-------|-------------|
+| Reconnaissance | Insider browses S3 contents for valuable files |
+| Delivery | N/A (insider already has access) |
+| Exploitation | Misuse of access to download confidential records |
+| Installation | N/A |
+| Command & Control | Insider sends data to private storage platform |
+| Actions on Objective | Data breach involving patient PII |
 
----
+[Full breakdown: Cyber Kill Chain.md](./Cyber%20Kill%20Chain.md)
 
-## 4. 🔗 Cyber Kill Chain Breakdown
+## STRIDE Analysis
 
-| Phase             | Description                                                                 |
-|------------------|------------------------------------------------------------------------------|
-| Reconnaissance    | Insider browses S3 contents for valuable files                              |
-| Delivery          | N/A (insider already has access)                                            |
-| Exploitation      | Misuse of access to download confidential records                           |
-| Installation      | N/A                                                                          |
-| Command & Control | Insider sends data to private storage platform                              |
-| Actions on Objective | Data breach involving patient PII                                        |
+| Component | Threat Type | Description |
+|-----------|------------|-------------|
+| S3 Buckets | Information Disclosure | Insider downloads sensitive data |
+| IAM Roles | Elevation of Privilege | IAM policy misconfiguration allows broader access |
+| Logging Service | Repudiation | Insider attempts to disable activity logs |
 
-*See full breakdown: [Cyber Kill Chain.md](./Cyber%20Kill%20Chain.md)*
+[Details: STRIDE Threat Model.md](./STRIDE%20Threat%20Model.md)
 
----
+## Risk Assessment
 
-## 5. ⚠️ STRIDE Threats Observed
+| Likelihood | Impact | Risk Score |
+|------------|--------|------------|
+| Medium | High | High |
 
-| Component     | Threat Type             | Explanation                                          |
-|---------------|--------------------------|------------------------------------------------------|
-| S3 Buckets     | Information Disclosure   | Insider downloads sensitive data                     |
-| IAM Roles      | Elevation of Privilege   | IAM policy misconfig allows broader access than needed |
-| Logging Service| Repudiation              | Insider attempts to disable activity logs            |
+[Details: Risk Summary.md](./Risk%20Summary.md)
 
-*See: [STRIDE Threat Model.md](./STRIDE%20Threat%20Model.md)*
+## Mitigation and Response
 
----
-
-## 6. 📊 Risk Assessment Summary
-
-| Likelihood | Impact | Risk Score | Notes                                                  |
-|------------|--------|------------|----------------------------------------------------------|
-| Medium     | High   | High       | Insider risks are difficult to detect and highly damaging |
-
-*See: [Risk Summary.md](./Risk%20Summary.md)*
-
----
-
-## 7. 🧯 Mitigation & Response Plan
-
-### 🔐 Prevention
+### Prevention
 - Enforce strict IAM least privilege
 - Mandatory access reviews and approval workflows
 - Segregate access based on job role
 
-### 🔍 Detection
+### Detection
 - Enable CloudTrail logging for all S3 API calls
 - Monitor for unusual download patterns
-- Use anomaly detection via GuardDuty or SIEM
+- Anomaly detection via GuardDuty or SIEM
 
-### 🚨 Response
+### Response
 - Suspend compromised IAM credentials
-- Notify compliance teams and legal (HIPAA implications)
+- Notify compliance teams and legal (HIPAA)
 - Forensic analysis and user access review
 - Update security policies to close control gaps
-
----
-
-🔁 [Back to Project 4: Threat Modeling & Incident Response](https://github.com/nfroze/Project-4-Threat-Modeling-Incident-Response)
